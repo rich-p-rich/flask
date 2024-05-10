@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Hello Flask</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">Thorin &amp; Company</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -38,14 +39,14 @@
     </nav>
   
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url(' {{ url_for('static', filename='img/home-bg.jpg') }}')">
+    <header class="masthead" style="background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/62da2c6d-54fd-4663-a278-b65016ce672e/dcbi5z0-1f1308b6-0877-4a2b-abb0-a6f3e401402a.jpg/v1/fill/w_1643,h_486,q_70,strp/thorin_oakenshield_and_company_by_hyper_connected_dcbi5z0-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODAwIiwicGF0aCI6IlwvZlwvNjJkYTJjNmQtNTRmZC00NjYzLWEyNzgtYjY1MDE2Y2U2NzJlXC9kY2JpNXowLTFmMTMwOGI2LTA4NzctNGEyYi1hYmIwLWE2ZjNlNDAxNDAyYS5qcGciLCJ3aWR0aCI6Ijw9MjcwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.ZE5EgIDt0tlA42vTHf6L9GNKoLWMfrq7_T_RWzzdH5Y')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <h1>Clean Blog</h1>
-              <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              <h1>Thorin &amp; Company</h1>
+              <span class="subheading">Thorin and his company of dwarves</span>
             </div>
           </div>
         </div>
@@ -91,7 +92,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+            <p class="copyright text-muted">Copyright &copy; Your Website <span id="copyright"></span></p>
           </div>
         </div>
       </div>
@@ -105,5 +106,9 @@
     <!-- Custom scripts for this template -->
     <script src="{{ url_for('static', filename='js/clean-blog.min.js') }}"></script>
   
+    <script>
+      $("#copyright").text(new Date().getFullYear());
+    </script>
+
   </body>
 </html>
